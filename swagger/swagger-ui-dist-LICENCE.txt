@@ -1,0 +1,403 @@
+┌──┤ swagger-ui-dist (Apache 2.0, MPLv2, 3-clause BSD, ISC, MIT) ├─────────┐
+│                                                                          │
+│ The swagger-ui-dist NPM webjar is comprised of a metric ton of minified  │
+│ ECMAscript and CSS aggregated from several projects, under different     │
+│ licences, all of which are reproduced below as far as we could unearth;  │
+│ upstream has no documentation of these and the output of the upstream    │
+│ licence analysis script for dependencies provided is incomplete.         │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ swagger                                                                │
+│ Copyright 2018 SmartBear Software                                        │
+│                                                                          │
+│ ‣ btoa                                                                   │
+│ Code and documentation copyright 2012-2014 AJ ONeal Tech, LLC.           │
+│ Code released under the Apache license 2.0.                              │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ dompurify                                                              │
+│ Copyright 2015 Mario Heiderich                                           │
+│                                                                          │
+│ DOMPurify is free software; you can redistribute it and/or modify it     │
+│ under the terms of either:                                               │
+│                                                                          │
+│ a) the Apache License Version 2.0, or                                    │
+│ b) the Mozilla Public License Version 2.0                                │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ hoist-non-react-statics                                                │
+│ Copyright (c) 2015, Yahoo! Inc.                                          │
+│ All rights reserved.                                                     │
+│                                                                          │
+│ Redistribution and use of this software in source and binary forms, with │
+│ or without modification, are permitted provided that the following       │
+│ conditions are met:                                                      │
+│                                                                          │
+│  * Redistributions of source code must retain the above copyright        │
+│    notice, this list of conditions and the following disclaimer.         │
+│                                                                          │
+│  * Redistributions in binary form must reproduce the above copyright     │
+│    notice, this list of conditions and the following disclaimer in the   │
+│    documentation and/or other materials provided with the distribution.  │
+│                                                                          │
+│  * Neither the name of Yahoo! Inc. nor the names of YUI's contributors   │
+│    may be used to endorse or promote products derived from this software │
+│    without specific prior written permission of Yahoo! Inc.              │
+│                                                                          │
+│ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS  │
+│ IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED    │
+│ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A          │
+│ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER │
+│ OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, │
+│ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,      │
+│ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR       │
+│ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF   │
+│ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING     │
+│ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS       │
+│ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             │
+│                                                                          │
+│ ‣ ieee754                                                                │
+│ Copyright (c) 2008, Fair Oaks Labs, Inc.                                 │
+│ All rights reserved.                                                     │
+│                                                                          │
+│ Redistribution and use in source and binary forms, with or without       │
+│ modification, are permitted provided that the following conditions are   │
+│ met:                                                                     │
+│                                                                          │
+│  * Redistributions of source code must retain the above copyright        │
+│    notice, this list of conditions and the following disclaimer.         │
+│                                                                          │
+│  * Redistributions in binary form must reproduce the above copyright     │
+│    notice, this list of conditions and the following disclaimer in the   │
+│    documentation and/or other materials provided with the distribution.  │
+│                                                                          │
+│  * Neither the name of Fair Oaks Labs, Inc. nor the names of its         │
+│    contributors may be used to endorse or promote products derived from  │
+│    this software without specific prior written permission.              │
+│                                                                          │
+│ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS  │
+│ IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED    │
+│ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A          │
+│ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER │
+│ OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, │
+│ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,      │
+│ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR       │
+│ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF   │
+│ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING     │
+│ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS       │
+│ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             │
+│                                                                          │
+│ ‣ qs                                                                     │
+│ Copyright (c) 2014 Nathan LaFreniere and other contributors.             │
+│ The complete list of contributors can be found at:                       │
+│  https://github.com/hapijs/qs/graphs/contributors                        │
+│ All rights reserved.                                                     │
+│                                                                          │
+│ Redistribution and use in source and binary forms, with or without       │
+│ modification, are permitted provided that the following conditions are   │
+│ met:                                                                     │
+│                                                                          │
+│  * Redistributions of source code must retain the above copyright        │
+│    notice, this list of conditions and the following disclaimer.         │
+│                                                                          │
+│  * Redistributions in binary form must reproduce the above copyright     │
+│    notice, this list of conditions and the following disclaimer in the   │
+│    documentation and/or other materials provided with the distribution.  │
+│                                                                          │
+│  * The names of any contributors may not be used to endorse or promote   │
+│    products derived from this software without specific prior written    │
+│    permission.                                                           │
+│                                                                          │
+│ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS  │
+│ IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED    │
+│ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A          │
+│ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT       │
+│ HOLDERS AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, │
+│ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED │
+│ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR   │
+│ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF   │
+│ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING     │
+│ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS       │
+│ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             │
+│                                                                          │
+│ ‣ redux-immutable                                                        │
+│ Copyright (c) 2016, Gajus Kuizinas (http://gajus.com/)                   │
+│ All rights reserved.                                                     │
+│                                                                          │
+│ Redistribution and use in source and binary forms, with or without       │
+│ modification, are permitted provided that the following conditions are   │
+│ met:                                                                     │
+│                                                                          │
+│  * Redistributions of source code must retain the above copyright        │
+│    notice, this list of conditions and the following disclaimer.         │
+│                                                                          │
+│  * Redistributions in binary form must reproduce the above copyright     │
+│    notice, this list of conditions and the following disclaimer in the   │
+│    documentation and/or other materials provided with the distribution.  │
+│                                                                          │
+│  * Neither the name of the Gajus Kuizinas (http://gajus.com/) nor the    │
+│    names of its contributors may be used to endorse or promote products  │
+│    derived from this software without specific prior written permission. │
+│                                                                          │
+│ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS  │
+│ IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED    │
+│ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A          │
+│ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL ANUARY BE LIABLE    │
+│ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR             │
+│ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF     │
+│ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS │
+│ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN  │
+│ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)  │
+│ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF   │
+│ THE POSSIBILITY OF SUCH DAMAGE.                                          │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ encode-3986                                                            │
+│ Published under CC0 by Johnny Hauser (m59peacemaker)                     │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ es5-ext                                                                │
+│ Copyright (c) 2011-2018, Mariusz Nowak, @medikoo, medikoo.com            │
+│                                                                          │
+│ ‣ inherits                                                               │
+│ Copyright (c) Isaac Z. Schlueter                                         │
+│                                                                          │
+│ ‣ memoizee                                                               │
+│ Copyright (c) 2012-2018, Mariusz Nowak, @medikoo, medikoo.com            │
+│                                                                          │
+│ ‣ timers-ext                                                             │
+│ Copyright (c) 2013-2018, Mariusz Nowak, @medikoo, medikoo.com            │
+│                                                                          │
+│ Permission to use, copy, modify, and/or distribute this software for any │
+│ purpose with or without fee is hereby granted, provided that the above   │
+│ copyright notice and this permission notice appear in all copies.        │
+│                                                                          │
+│ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES │
+│ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF         │
+│ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR  │
+│ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES   │
+│ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN    │
+│ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF  │
+│ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.           │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ css.escape, punycode                                                   │
+│ Copyright Mathias Bynens <https://mathiasbynens.be/>                     │
+│                                                                          │
+│ ‣ d                                                                      │
+│ Copyright (C) 2013 Mariusz Nowak (www.medikoo.com)                       │
+│ ‣ es6-symbol                                                             │
+│ Copyright (C) 2013-2015 Mariusz Nowak (www.medikoo.com)                  │
+│ ‣ event-emitter                                                          │
+│ Copyright (C) 2012-2015 Mariusz Nowak (www.medikoo.com)                  │
+│ ‣ lru-queue                                                              │
+│ Copyright (C) 2014 Mariusz Nowak (www.medikoo.com)                       │
+│ ‣ next-tick                                                              │
+│ Copyright (C) 2012-2016 Mariusz Nowak                                    │
+│                                                                          │
+│ ‣ webpack                                                                │
+│ Copyright JS Foundation and other contributors                           │
+│ ‣ lodash, lodash-es                                                      │
+│ Copyright JS Foundation and other contributors <https://js.foundation/>  │
+│                                                                          │
+│ Based on Underscore.js, copyright Jeremy Ashkenas, DocumentCloud and     │
+│ Investigative Reporters & Editors <http://underscorejs.org/>             │
+│                                                                          │
+│ This software consists of voluntary contributions made by many           │
+│ individuals. For exact contribution history, see the revision history    │
+│ available at https://github.com/lodash/lodash                            │
+│ ‣ lodash.debounce                                                        │
+│ Copyright jQuery Foundation and other contributors <https://jquery.org/> │
+│                                                                          │
+│ Based on Underscore.js, copyright Jeremy Ashkenas, DocumentCloud and     │
+│ Investigative Reporters & Editors <http://underscorejs.org/>             │
+│                                                                          │
+│ This software consists of voluntary contributions made by many           │
+│ individuals. For exact contribution history, see the revision history    │
+│ available at https://github.com/lodash/lodash                            │
+│                                                                          │
+│ ‣ events, stream-browserify, url, util                                   │
+│ Copyright Joyent, Inc. and other Node contributors. All rights reserved. │
+│ ‣ core-util-is                                                           │
+│ Copyright Node.js contributors. All rights reserved.                     │
+│ ‣ readable-stream, string_decoder                                        │
+│ Copyright Node.js contributors.                                          │
+│ Copyright Joyent, Inc. and other Node contributors.                      │
+│ All rights reserved.                                                     │
+│                                                                          │
+│ ‣ create-react-class, fbjs, invariant, prop-types, react, react-dom      │
+│ Copyright (c) 2013-present, Facebook, Inc.                               │
+│ ‣ immutable, regenerator-runtime                                         │
+│ Copyright (c) 2014-present, Facebook, Inc.                               │
+│                                                                          │
+│ ‣ object-assign, serialize-error                                         │
+│ Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)  │
+│ ‣ symbol-observable                                                      │
+│ Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)  │
+│ Copyright (c) Ben Lesh <ben@benlesh.com>                                 │
+│                                                                          │
+│ ‣ querystringify, requires-port, url-parse                               │
+│ Copyright (c) 2015 Unshift.io, Arnout Kazemier, the Contributors.        │
+│                                                                          │
+│ ‣ repeat-string                                                          │
+│ Copyright (c) 2014-2016, Jon Schlinkert.                                 │
+│ ‣ remarkable                                                             │
+│ Copyright (c) 2014-2016, Jon Schlinkert                                  │
+│ Copyright (c) 2014 Jon Schlinkert, Vitaly Puzrin.                        │
+│ ‣ kyleshockey-js-yaml                                                    │
+│ Copyright (C) 2011-2015 by Vitaly Puzrin                                 │
+│                                                                          │
+│ ‣ safe-buffer                                                            │
+│ Copyright (c) Feross Aboukhadijeh                                        │
+│ ‣ buffer                                                                 │
+│ Copyright (c) Feross Aboukhadijeh, and other contributors.               │
+│                                                                          │
+│ ‣ process                                                                │
+│ Copyright (c) 2013 Roman Shtylman <shtylman@gmail.com>                   │
+│ ‣ cookie                                                                 │
+│ Copyright (c) 2012-2014 Roman Shtylman <shtylman@gmail.com>              │
+│ Copyright (c) 2015 Douglas Christopher Wilson <doug@somethingdoug.com>   │
+│                                                                          │
+│ ‣ react-redux                                                            │
+│ Copyright (c) 2015 Dan Abramov                                           │
+│ ‣ redux                                                                  │
+│ Copyright (c) 2015-present Dan Abramov                                   │
+│                                                                          │
+│ ‣ autolinker                                                             │
+│ Copyright (c) 2014 Gregory Jacobs (http://greg-jacobs.com)               │
+│                                                                          │
+│ ‣ babel-runtime                                                          │
+│ Copyright (c) 2014-2018 Sebastian McKenzie and other contributors        │
+│                                                                          │
+│ ‣ base64-js                                                              │
+│ Copyright (c) 2014                                                       │
+│                                                                          │
+│ ‣ braintree-sanitize-url                                                 │
+│ Copyright (c) 2017 Braintree                                             │
+│                                                                          │
+│ ‣ classnames                                                             │
+│ Copyright (c) 2016 Jed Watson                                            │
+│                                                                          │
+│ ‣ core-js                                                                │
+│ Copyright (c) 2014-2018 Denis Pushkarev                                  │
+│                                                                          │
+│ ‣ cross-fetch                                                            │
+│ Copyright (c) 2017 Leonardo Quixadá                                      │
+│                                                                          │
+│ ‣ deep-equal                                                             │
+│ Copyright (c) 2009 Thomas Robinson <280north.com>                        │
+│ Originally from narwhal.js (http://narwhaljs.org)                        │
+│                                                                          │
+│ ‣ deep-extend                                                            │
+│ Copyright (c) 2013-2018, Viacheslav Lotsmanov                            │
+│                                                                          │
+│ ‣ fast-json-patch                                                        │
+│ Copyright (c) 2013, 2014 Joachim Wester                                  │
+│                                                                          │
+│ ‣ is-promise                                                             │
+│ Copyright (c) 2014 Forbes Lindesay                                       │
+│                                                                          │
+│ ‣ isarray                                                                │
+│ Copyright (c) 2013 Julian Gruber <julian@juliangruber.com>               │
+│                                                                          │
+│ ‣ isomorphic-form-data                                                   │
+│ Copyright (c) 2012 Felix Geisendörfer (felix@debuggable.com)             │
+│ and contributors                                                         │
+│                                                                          │
+│ ‣ js-file-download                                                       │
+│ Copyright 2017 Kenneth Jiang                                             │
+│                                                                          │
+│ ‣ kyleshockey-object-assign-deep                                         │
+│ Originally written by Josh Cole (saikojosh)                              │
+│                                                                          │
+│ ‣ kyleshockey-xml                                                        │
+│ Copyright (c) 2011-2017 Dylan Greene <dylang@gmail.com>                  │
+│                                                                          │
+│ ‣ process-nextick-args                                                   │
+│ Copyright (c) 2015 Calvin Metcalf                                        │
+│                                                                          │
+│ ‣ querystring-browser                                                    │
+│ Copyright (c) 2015 Mathias Rasmussen                                     │
+│                                                                          │
+│ ‣ querystring-es3                                                        │
+│ Copyright 2012 Irakli Gozalishvili. All rights reserved.                 │
+│                                                                          │
+│ ‣ react-debounce-input                                                   │
+│ Copyright (c) 2016 Nik Butenko                                           │
+│                                                                          │
+│ ‣ react-immutable-proptypes                                              │
+│ Copyright (c) 2015 James Burnett                                         │
+│                                                                          │
+│ ‣ react-immutable-pure-component                                         │
+│ Copyright (c) 2017 Piotr Tomasz Monarski                                 │
+│                                                                          │
+│ ‣ reselect                                                               │
+│ Copyright (c) 2015-2016 Reselect Contributors                            │
+│                                                                          │
+│ ‣ setimmediate                                                           │
+│ Copyright (c) 2012 Barnesandnoble.com, llc,                              │
+│ Donavon West, and Domenic Denicola                                       │
+│                                                                          │
+│ ‣ tachyons                                                               │
+│ Copyright (c) 2015 @mrmrs <hi@mrmrs.css> (mrmrs.io)                      │
+│ Copyright © Nicolas Gallagher and Jonathan Neal                          │
+│ (github.com/necolas/normalize.css)                                       │
+│                                                                          │
+│ ‣ timers-browserify                                                      │
+│ Copyright © 2012 J. Ryan Stinnett <jryans@gmail.com>                     │
+│ Copyright Joyent, Inc. and other Node contributors.                      │
+│ All rights reserved.                                                     │
+│                                                                          │
+│ ‣ utf8-bytes                                                             │
+│ Written by James Halliday (substack)                                     │
+│                                                                          │
+│ ‣ utfstring                                                              │
+│ Copyright (c) 2016 Cameron Dutro                                         │
+│                                                                          │
+│ ‣ util-deprecate                                                         │
+│ Copyright (c) 2014 Nathan Rajlich <nathan@tootallnate.net>               │
+│                                                                          │
+│ ‣ xml-but-prettier                                                       │
+│ Copyright (c) 2015 Jonathan Persson                                      │
+│                                                                          │
+│ Permission is hereby granted, free of charge, to any person obtaining a  │
+│ copy of this software and associated documentation files (the            │
+│ "Software"), to deal in the Software without restriction, including      │
+│ without limitation the rights to use, copy, modify, merge, publish,      │
+│ distribute, sublicense, and/or sell copies of the Software, and to       │
+│ permit persons to whom the Software is furnished to do so, subject to    │
+│ the following conditions:                                                │
+│                                                                          │
+│ The above copyright notice and this permission notice shall be included  │
+│ in all copies or substantial portions of the Software.                   │
+│                                                                          │
+│ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS  │
+│ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF               │
+│ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.   │
+│ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY     │
+│ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,     │
+│ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE        │
+│ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                   │
+├──────────────────────────────────────────────────────────────────────────┤
+│ ‣ zenscroll                                                              │
+│ Copyright 2015–2018 Gabor Lenard                                         │
+│                                                                          │
+│ This is free and unencumbered software released into the public domain.  │
+│                                                                          │
+│ Anyone is free to copy, modify, publish, use, compile, sell, or          │
+│ distribute this software, either in source code form or as a compiled    │
+│ binary, for any purpose, commercial or non-commercial, and by any means. │
+│                                                                          │
+│ In jurisdictions that recognize copyright laws, the author or authors of │
+│ this software dedicate any and all copyright interest in the software to │
+│ the public domain. We make this dedication for the benefit of the public │
+│ at large and to the detriment of our heirs and successors. We intend     │
+│ this dedication to be an overt act of relinquishment in perpetuity of    │
+│ all present and future rights to this software under copyright law.      │
+│                                                                          │
+│ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS  │
+│ OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF               │
+│ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.   │
+│ IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  │
+│ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING  │
+│ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER      │
+│ DEALINGS IN THE SOFTWARE.                                                │
+│                                                                          │
+│ For more information, please refer to <http://unlicense.org>             │
+│                                                                          │
+│ (But see: https://github.com/zengabor/zenscroll/issues/65 )              │
+└──────────────────────────────────────────────────────────────────────────┘
