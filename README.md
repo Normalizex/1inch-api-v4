@@ -16,7 +16,7 @@ yarn add @normalizex/1inch-api-v4
 ***
 # Usage Exanple:
 ```js
-import OneInchApi, { ChainIds } from "1inch-api-v4";
+import OneInchApi, { ChainIds } from "@normalizex/1inch-api-v4";
 
 const Inch = new OneInchApi(ChainIds.ethereum);
 
