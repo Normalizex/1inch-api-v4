@@ -10,8 +10,11 @@ npm install git+https://github.com/Normalizex/1inch-api-v4.git
 #yarn
 yarn add git+https://github.com/Normalizex/1inch-api-v4.git
 ```
-
-# Usage:
+***
+# Documentation:
+* You can find full documentation in the folder [docs/README.md](./docs/README.md) 
+***
+# Usage Exanple:
 ```js
 import OneInchApi from "1inch-api-v4";
 
