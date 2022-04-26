@@ -20,7 +20,7 @@ export default class OneInchRouter {
 	approveSpender = async () => axios.get(`${this.#baseUrl}/approve/spender`).then((res) => res.data.address);
 
 	/**
-	 * Address of the 1inch router that must be trusted to spend funds for the exchange
+	 * Generate data for calling the contract in order to allow the 1inch router to spend funds
 	 * 	
 	 * @param {string} tokenAddress - Token address you want to exchange
 	 * @param {string | number} amount - The number of tokens that the 1inch router is allowed to spend.If not specified, it will be allowed to spend an infinite amount of tokens. **Example : 100000000000**
