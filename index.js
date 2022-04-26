@@ -79,7 +79,7 @@ class OneInchApi {
 	presets = async () => axios.get(`${this.#baseUrl}/presets`).then(res => res.data);
 
 	/**
-	 * @typedef {Object} InchQuteOptions
+	 * @typedef {Object} InchQuoteOptions
 	 * @property {string} protocols - default: all
 	 * @property {string} fee - Min: 0; max: 3; Max: 0; max: 3; default: 0
 	 * @property {string | number} gasLimit - ammount in units
@@ -127,7 +127,7 @@ class OneInchApi {
 	 * @param {string} fromTokenAddress  - Example : 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE
 	 * @param {string} toTokenAddress  - Example : 0x111111111117dc0aa78b770fa6a738034120c302
 	 * @param {string | number} amount  - In token UNITS (amount * (10 ** tokenDecimals)) Example : 10000000000000000
-	 * @param {InchQuteOptions} options
+	 * @param {InchQuoteOptions} options
 	 * @returns {Promise<InchQuoteResponse>}
 	*/
 	quote = async (fromTokenAddress, toTokenAddress, amount, options = {}) => axios.get(`${this.#baseUrl}/quote`, { params: { fromTokenAddress, toTokenAddress, amount, ...options } }).then(res => res.data);
