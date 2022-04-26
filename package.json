@@ -1,6 +1,6 @@
 {
-  "name": "1inch-api-v4",
-  "version": "1.0.1",
+  "name": "@normalizex/1inch-api-v4",
+  "version": "1.0.2",
   "description": "library targeting v4 of the 1inch DeFi aggregator API.",
   "main": "index.js",
   "repository": {
