@@ -4,11 +4,11 @@
 ***
 # Installation:
 ```console
-#npm
-npm install git+https://github.com/Normalizex/1inch-api-v4.git
+//npm
+npm i @normalizex/1inch-api-v4
 
-#yarn
-yarn add git+https://github.com/Normalizex/1inch-api-v4.git
+//yarn
+yarn add @normalizex/1inch-api-v4
 ```
 ***
 # Documentation:
