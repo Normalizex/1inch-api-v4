@@ -3,11 +3,26 @@
   "version": "1.0.0",
   "description": "Simple 1inch api v4 wrapper for node.js",
   "main": "index.js",
-  "repository": "https://github.com/Normalizex/1inch-api-v4",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Normalizex/1inch-api-v4"
+  },
   "author": "Normalizex",
   "license": "MIT",
   "private": false,
   "type": "module",
+  "keywords": [
+    "web3",
+    "axios",
+    "1inch",
+    "api",
+    "wrapper",
+    "defi",
+    "blockchain",
+    "https",
+    "async"
+  ],
+  "homepage": "https://github.com/Normalizex/1inch-api-v4#readme",
   "dependencies": {
     "axios": "0.27.0"
   }
