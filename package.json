@@ -1,7 +1,7 @@
 {
   "name": "1inch-api-v4",
-  "version": "1.0.0",
-  "description": "Simple 1inch api v4 wrapper for node.js",
+  "version": "1.0.1",
+  "description": "library targeting v4 of the 1inch DeFi aggregator API.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -11,6 +11,9 @@
   "license": "MIT",
   "private": false,
   "type": "module",
+  "scripts": {
+    "docs": "jsdoc index.js --destination ./docs/module"
+  },
   "keywords": [
     "web3",
     "axios",
@@ -25,5 +28,8 @@
   "homepage": "https://github.com/Normalizex/1inch-api-v4#readme",
   "dependencies": {
     "axios": "0.27.0"
+  },
+  "devDependencies": {
+    "jsdoc": "3.6.10"
   }
 }

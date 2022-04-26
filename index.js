@@ -1,12 +1,28 @@
 import axios from 'axios';
 
 /**
+ * @readonly
+ * @enum {number}
+*/
+const ChainIds = {
+	ethereum: 1,
+	binanceSmartChain: 56,
+	polygon: 137,
+	optimism: 10,
+	arbitrum: 42161,
+	gnosis: 100,
+	avalanche: 43114,
+	fantom: 250
+}
+
+/**
  * @class OneInchApi
  * @constructor
  * @public
  */
 class OneInchApi { 
 	#baseUrl;
+	#chainId;
 
 	/**
 	 * @typedef {Object} InchTokenData
@@ -174,7 +190,7 @@ class OneInchApi {
 	*/
 
 	/**
-	 * @function
+	 * @function OneInchApi.swap
 	 * @async
 	 * @description
 	 * **Generate data for calling the 1inch router for exchange**
@@ -206,11 +222,31 @@ class OneInchApi {
 	swap = async (fromTokenAddress, toTokenAddress, amount, fromAddress, slippage, options = {}) => axios.get(`${this.#baseUrl}/swap`, { params: { fromTokenAddress, toTokenAddress, amount, fromAddress, slippage, ...options } }).then(res => res.data);
 
 	/**
-	 * @param {number} chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
+	 * @function OneInchApi.swithChain
+	 * @param {number | string} chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
+	 * @description Switch chain to other
+	*/
+	swithChain = (chainId) => {
+		if (isNaN(chainId)) throw new Error('Invlid ChainId');
+		
+		this.#chainId = Number(chainId);
+		this.#baseUrl = `https://api.1inch.exchange/v4.0/${chainId}`;
+	}
+
+	get chainId() {
+		return this.#chainId;
+	}
+
+	/**
+	 * @param {number | string} chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
 	*/
 	constructor(chainId) {
-		this.#baseUrl = `https://api.1inch.exchange/v4.0/${chainId}`;
+		if (isNaN(chainId)) throw new Error('Invlid ChainId');
+
+		this.#chainId = Number(chainId);
+		this.#baseUrl = `https://api.1inch.exchange/v4.0/${this.#chainId}`;
 	}
 };
 
 export default OneInchApi;
+export { ChainIds };

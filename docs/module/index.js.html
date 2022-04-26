@@ -29,12 +29,28 @@
             <pre class="prettyprint source linenums"><code>import axios from 'axios';
 
 /**
+ * @readonly
+ * @enum {number}
+*/
+const ChainIds = {
+	ethereum: 1,
+	binanceSmartChain: 56,
+	polygon: 137,
+	optimism: 10,
+	arbitrum: 42161,
+	gnosis: 100,
+	avalanche: 43114,
+	fantom: 250
+}
+
+/**
  * @class OneInchApi
  * @constructor
  * @public
  */
 class OneInchApi { 
 	#baseUrl;
+	#chainId;
 
 	/**
 	 * @typedef {Object} InchTokenData
@@ -43,30 +59,6 @@ class OneInchApi {
 	 * @property {number} decimals
 	 * @property {string} address
 	 * @property {string} logoURI
-	*/
-
-	/**
-	 * @typedef {Object} InchQuteOptions
-	 * @property {string} protocols - default: all
-	 * @property {string} fee - Min: 0; max: 3; Max: 0; max: 3; default: 0
-	 * @property {string | number} gasLimit - ammount in units
-	 * @property {string | number} connectorTokens - max: 5
-	 * @property {string | number} complexityLevel - min: 0; max: 3; default: 2
-	 * @property {string | number} mainRouteParts - default: 10; max: 50
-	 * @property {string | number} parts - split parts. default: 50; max: 100
-	 * @property {string | number} gasPrice - default: fast from network
-	 * @description !!! should be the same for quote and swap !!!
-	*/
-
-	/**
-	 * @typedef {Object} InchQuoteResponse
-	 * @property {InchTokenData} fromToken
-	 * @property {InchTokenData} toToken
-	 * @property {string} toTokenAmount
-	 * @property {string} fromTokenAmount
-	 * @property {Array&lt;any>} protocols
-	 * @property {number} estimatedGas
-	 * @description !!! should be the same for quote and swap !!!
 	*/
 
 	/**
@@ -131,6 +123,30 @@ class OneInchApi {
 	presets = async () => axios.get(`${this.#baseUrl}/presets`).then(res => res.data);
 
 	/**
+	 * @typedef {Object} InchQuoteOptions
+	 * @property {string} protocols - default: all
+	 * @property {string} fee - Min: 0; max: 3; Max: 0; max: 3; default: 0
+	 * @property {string | number} gasLimit - ammount in units
+	 * @property {string | number} connectorTokens - max: 5
+	 * @property {string | number} complexityLevel - min: 0; max: 3; default: 2
+	 * @property {string | number} mainRouteParts - default: 10; max: 50
+	 * @property {string | number} parts - split parts. default: 50; max: 100
+	 * @property {string | number} gasPrice - default: fast from network
+	 * @description !!! should be the same for quote and swap !!!
+	*/
+
+	/**
+	 * @typedef {Object} InchQuoteResponse
+	 * @property {InchTokenData} fromToken
+	 * @property {InchTokenData} toToken
+	 * @property {string} toTokenAmount
+	 * @property {string} fromTokenAmount
+	 * @property {Array&lt;any>} protocols
+	 * @property {number} estimatedGas
+	 * @description !!! should be the same for quote and swap !!!
+	*/
+
+	/**
 	 * @function OneInchApi.quote
 	 * @async
 	 * @description 
@@ -155,7 +171,7 @@ class OneInchApi {
 	 * @param {string} fromTokenAddress  - Example : 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE
 	 * @param {string} toTokenAddress  - Example : 0x111111111117dc0aa78b770fa6a738034120c302
 	 * @param {string | number} amount  - In token UNITS (amount * (10 ** tokenDecimals)) Example : 10000000000000000
-	 * @param {InchQuteOptions} options
+	 * @param {InchQuoteOptions} options
 	 * @returns {Promise&lt;InchQuoteResponse>}
 	*/
 	quote = async (fromTokenAddress, toTokenAddress, amount, options = {}) => axios.get(`${this.#baseUrl}/quote`, { params: { fromTokenAddress, toTokenAddress, amount, ...options } }).then(res => res.data);
@@ -202,7 +218,7 @@ class OneInchApi {
 	*/
 
 	/**
-	 * @function
+	 * @function OneInchApi.swap
 	 * @async
 	 * @description
 	 * **Generate data for calling the 1inch router for exchange**
@@ -234,21 +250,34 @@ class OneInchApi {
 	swap = async (fromTokenAddress, toTokenAddress, amount, fromAddress, slippage, options = {}) => axios.get(`${this.#baseUrl}/swap`, { params: { fromTokenAddress, toTokenAddress, amount, fromAddress, slippage, ...options } }).then(res => res.data);
 
 	/**
-	 * @param {number} chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
+	 * @function OneInchApi.swithChain
+	 * @param {number | string} chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
+	 * @description Switch chain to other
+	*/
+	swithChain = (chainId) => {
+		if (isNaN(chainId)) throw new Error('Invlid ChainId');
+		
+		this.#chainId = Number(chainId);
+		this.#baseUrl = `https://api.1inch.exchange/v4.0/${chainId}`;
+	}
+
+	get chainId() {
+		return this.#chainId;
+	}
+
+	/**
+	 * @param {number | string} chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
 	*/
 	constructor(chainId) {
-		this.#baseUrl = `https://api.1inch.exchange/v4.0/${chainId}`;
+		if (isNaN(chainId)) throw new Error('Invlid ChainId');
+
+		this.#chainId = Number(chainId);
+		this.#baseUrl = `https://api.1inch.exchange/v4.0/${this.#chainId}`;
 	}
 };
 
 export default OneInchApi;
-
-const inch = new OneInchApi(56);
-
-
-inch.liquiditySources('123', '123', 56, {  }).then(a => {
-	console.log(a[0])
-})</code></pre>
+export { ChainIds };</code></pre>
         </article>
     </section>
 
@@ -258,13 +287,13 @@ inch.liquiditySources('123', '123', 56, {  }).then(a => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OneInchApi.html">OneInchApi</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="OneInchApi.html">OneInchApi</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChainIds">ChainIds</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Apr 26 2022 15:04:23 GMT+0300 (Москва, стандартное время)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Tue Apr 26 2022 17:17:53 GMT+0300 (Москва, стандартное время)
 </footer>
 
 <script> prettyPrint(); </script>

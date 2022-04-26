@@ -16,15 +16,19 @@ yarn add git+https://github.com/Normalizex/1inch-api-v4.git
 ***
 # Usage Exanple:
 ```js
-import OneInchApi from "1inch-api-v4";
+import OneInchApi, { ChainIds } from "1inch-api-v4";
 
-const Inch = new OneInchApi(56);
+const Inch = new OneInchApi(ChainIds.ethereum);
 
 const BUSD = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
 const WETH = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
 const WalletAddress = '0x35552CF3Ce8Cc8a0f7fdC8Aa88a89b92e9Ab5FdB';
 
 // EXAMPLES
+inch.chainId;// return 1
+inch.swithChain(ChainIds.binanceSmartChain);
+inch.chainId;// return 56
+
 Inch.allowance(BUSD, WalletAddress).then(data => {
 	//return "0"
 });
