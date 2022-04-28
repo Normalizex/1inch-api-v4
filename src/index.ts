@@ -24,47 +24,47 @@ export const ChainIds = {
  * @public
  */
 class OneInchApi {
-	private baseUrl: string;
-	private chainId: number;
+	private _baseUrl: string;
+	private _chainId: number;
 
 	/**
 	 * @returns Always returns code 200 if API is stable
 	*/
-	healtcheck = async () => axios.get<{ status: string }>(`${this.baseUrl}/healthcheck`).then(res => res.data);
+	healtcheck = async () => axios.get<{ status: string }>(`${this._baseUrl}/healthcheck`).then(res => res.data);
 
 	/**
 	 * @returns Address of the 1inch router that must be trusted to spend funds for the exchange
 	*/
-	approveSpender = async () => axios.get<{address: string}>(`${this.baseUrl}/approve/spender`).then((res) => res.data.address);
+	approveSpender = async () => axios.get<{address: string}>(`${this._baseUrl}/approve/spender`).then((res) => res.data.address);
 
 	/**
 	 * @param tokenAddress - Token address you want to exchange
 	 * @param amount - The number of tokens that the 1inch router is allowed to spend.If not specified, it will be allowed to spend an infinite amount of tokens. **Example : 100000000000**
 	 * @returns Generate data for calling the contract in order to allow the 1inch router to spend funds
 	*/
-	approveTransaction = async (tokenAddress: string, amount?: string | number) => axios.get<{ data: string, gasPrice: string, to: string, value: string }>(`${this.baseUrl}/approve/transaction`, { params: { tokenAddress, amount } }).then(res => res.data);
+	approveTransaction = async (tokenAddress: string, amount?: string | number) => axios.get<{ data: string, gasPrice: string, to: string, value: string }>(`${this._baseUrl}/approve/transaction`, { params: { tokenAddress, amount } }).then(res => res.data);
 
 	/**
 	 * @param tokenAddress - Token address you want to exchange
 	 * @param walletAddress - Wallet address for which you want to check
 	 * @returns The number of tokens that the 1inch router is allowed to spend
 	*/
-	allowance = async (tokenAddress: string, walletAddress: string) => axios.get<{allowance: string}>(`${this.baseUrl}/approve/allowance`, { params: { tokenAddress, walletAddress } }).then(res => res.data.allowance);
+	allowance = async (tokenAddress: string, walletAddress: string) => axios.get<{allowance: string}>(`${this._baseUrl}/approve/allowance`, { params: { tokenAddress, walletAddress } }).then(res => res.data.allowance);
 
 	/**
 	 * @returns List of liquidity sources that are available for routing in the 1inch Aggregation protocol
 	*/
-	liquiditySources = async () => axios.get <{protocols: Array<{ id: string, title: string, img: string }>}>(`${this.baseUrl}/liquidity-sources`).then(res => res.data.protocols);
+	liquiditySources = async () => axios.get <{protocols: Array<{ id: string, title: string, img: string }>}>(`${this._baseUrl}/liquidity-sources`).then(res => res.data.protocols);
 
 	/**
 	 * @returns List of tokens that are available for swap in the 1inch Aggregation protocol
 	*/
-	tokens = async () => axios.get<{ tokens: { [address: string]: TokenData }}>(`${this.baseUrl}/tokens`).then(res => Object.values(res.data.tokens));
+	tokens = async () => axios.get<{ tokens: { [address: string]: TokenData }}>(`${this._baseUrl}/tokens`).then(res => Object.values(res.data.tokens));
 
 	/**
 	 * @returns Object of preset configurations for the 1inch router
 	*/
-	presets = async () => axios.get<{[param: string]: any}>(`${this.baseUrl}/presets`).then(res => res.data);
+	presets = async () => axios.get<{[param: string]: any}>(`${this._baseUrl}/presets`).then(res => res.data);
 
 	/**
 	 * @description Find the best quote to exchange via 1inch router
@@ -92,7 +92,7 @@ class OneInchApi {
 	 * @param amount - In token UNITS (amount * (10 ** tokenDecimals)) Example : 10000000000000000
 	 * @param options - Full info about options you can find in "remarks"
 	*/
-	quote = async (fromTokenAddress: string, toTokenAddress: string, amount: string | number, options: QuoteParams = {}) => axios.get<QuoteResponse>(`${this.baseUrl}/quote`, { params: { fromTokenAddress, toTokenAddress, amount, ...options } }).then(res => res.data);
+	quote = async (fromTokenAddress: string, toTokenAddress: string, amount: string | number, options: QuoteParams = {}) => axios.get<QuoteResponse>(`${this._baseUrl}/quote`, { params: { fromTokenAddress, toTokenAddress, amount, ...options } }).then(res => res.data);
 
 	/**
 	 * @description Generate data for calling the 1inch router for exchange
@@ -128,27 +128,29 @@ class OneInchApi {
 	 * @param slippage - min: 0; max: 50; (Percentage)
 	 * @param options - Full info about options you can find in "remarks"
 	*/
-	swap = async (fromTokenAddress: string, toTokenAddress: string, amount: string | number, fromAddress: string, slippage: string | number, options: SwapParams = {}) => axios.get<SwapResponse>(`${this.baseUrl}/swap`, { params: { fromTokenAddress, toTokenAddress, amount, fromAddress, slippage, ...options } }).then(res => res.data);
+	swap = async (fromTokenAddress: string, toTokenAddress: string, amount: string | number, fromAddress: string, slippage: string | number, options: SwapParams = {}) => axios.get<SwapResponse>(`${this._baseUrl}/swap`, { params: { fromTokenAddress, toTokenAddress, amount, fromAddress, slippage, ...options } }).then(res => res.data);
+
+	chain = () => this._chainId;
 
 	/**
 	 * @param chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
 	 * @description Switch chain to other
 	*/
 	swithChain = (chainId: number | string) => {
-		if (isNaN(Number(chainId))) throw new Error('Invlid ChainId');
+		if (isNaN(Number(chainId))) throw new Error('Invlid chainId');
 		
-		this.chainId = Number(chainId);
-		this.baseUrl = `https://api.1inch.exchange/v4.0/${chainId}`;
+		this._chainId = Number(chainId);
+		this._baseUrl = `https://api.1inch.exchange/v4.0/${chainId}`;
 	}
 
 	/**
 	 * @param chainId - while the transaction signature process uses the chain ID. (eth - 1 | bsc - 56)
 	*/
 	constructor(chainId: number | string) {
-		if (isNaN(Number(chainId))) throw new Error('Invlid ChainId');
+		if (isNaN(Number(chainId))) throw new Error('Invlid chainId');
 
-		this.chainId = Number(chainId);
-		this.baseUrl = `https://api.1inch.exchange/v4.0/${this.chainId}`;
+		this._chainId = Number(chainId);
+		this._baseUrl = `https://api.1inch.exchange/v4.0/${this._chainId}`;
 	}
 };
 

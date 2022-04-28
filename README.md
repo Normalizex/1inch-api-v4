@@ -1,5 +1,5 @@
 # 1inch-api-v4
-![](https://miro.medium.com/max/1400/1*nE0SDZw6v0QyBOoKyXcHtw.gif)
+![](./media/v4.gif)
 
 
 * `Simple 1inch api v4 wrapper for node.js`
@@ -47,9 +47,9 @@ const WETH = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
 const WalletAddress = '0x35552CF3Ce8Cc8a0f7fdC8Aa88a89b92e9Ab5FdB';
 
 // EXAMPLES
-inch.chainId;// return 1
+inch.chain();// return 1
 inch.swithChain(ChainIds.binanceSmartChain);
-inch.chainId;// return 56
+inch.chain();// return 56
 
 Inch.allowance(BUSD, WalletAddress).then(data => {
 	//return "0"
