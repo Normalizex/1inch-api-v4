@@ -1,7 +1,9 @@
 # 1inch api v4 Documentation
 
-* You can find all information aboout `install` and `examples` in [readme](../README.md) 
+You can find all information aboout `install` and `examples` in [readme](../README.md) 
+***
+A visually understandable example of requests was presented in the form of SwaggerUI this sites:
 
-- [Package documentation](https://normalizex.github.io/1inch-api-v4/module/OneInchApi.html)
-- [Locally copied preview swagger api](https://normalizex.github.io/1inch-api-v4/)
-- [Latest 1inch official swagger docs](https://api.1inch.exchange/swagger/arbitrum/#/)
+* [Package Site](https://normalizex.github.io/1inch-api-v4/)
+* [1inch.exchange](https://api.1inch.exchange/swagger/arbitrum/#/)
+* [docs 1inch](https://docs.1inch.io/docs/aggregation-protocol/api/swagger)

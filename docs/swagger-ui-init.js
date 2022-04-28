@@ -11,7 +11,7 @@ window.onload = function() {
 	"swaggerDoc": {
 	  "openapi": "3.0.0",
 	  "paths": {
-		"https://api.1inch.exchange/v4.0/42161/healthcheck": {
+		"healthcheck": {
 		  "get": {
 			"operationId": "FactoryHealthCheckController_healthcheck",
 			"summary": "API health check",
@@ -26,7 +26,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/approve/spender": {
+		"approve/spender": {
 		  "get": {
 			"operationId": "ApproveFactoryController_getSpender",
 			"summary": "Address of the 1inch router that must be trusted to spend funds for the exchange",
@@ -48,7 +48,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/approve/transaction": {
+		"approve/transaction": {
 		  "get": {
 			"operationId": "ApproveFactoryController_getCallData",
 			"summary": "Generate data for calling the contract in order to allow the 1inch router to spend funds",
@@ -90,7 +90,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/approve/allowance": {
+		"approve/allowance": {
 		  "get": {
 			"operationId": "ApproveFactoryController_getAllowance",
 			"summary": "Get the number of tokens that the 1inch router is allowed to spend",
@@ -124,7 +124,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/liquidity-sources": {
+		"liquidity-sources": {
 		  "get": {
 			"operationId": "ChainProtocolController_getProtocolsImages",
 			"summary": "List of liquidity sources that are available for routing in the 1inch Aggregation protocol",
@@ -146,7 +146,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/tokens": {
+		"tokens": {
 		  "get": {
 			"operationId": "ChainTokensController_getTokens",
 			"summary": "List of tokens that are available for swap in the 1inch Aggregation protocol",
@@ -168,7 +168,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/presets": {
+		"presets": {
 		  "get": {
 			"operationId": "ChainPresetsController_getPresets",
 			"summary": "List of preset configurations for the 1inch router",
@@ -183,7 +183,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/quote": {
+		"quote": {
 		  "get": {
 			"operationId": "SwapFactoryCommonController_getQuote",
 			"summary": "Find the best quote to exchange via 1inch router",
@@ -307,7 +307,7 @@ window.onload = function() {
 			]
 		  }
 		},
-		"https://api.1inch.exchange/v4.0/42161/swap": {
+		"swap": {
 		  "get": {
 			"operationId": "SwapFactoryCommonController_getSwap",
 			"summary": "Generate data for calling the 1inch router for exchange",

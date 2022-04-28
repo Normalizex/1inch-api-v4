@@ -1,0 +1,17 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "es2020",
+    "outDir": "dist",
+    "sourceMap": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "strict": true, 
+    "lib": [
+      "es2018",
+      "DOM"
+    ]
+  },
+}

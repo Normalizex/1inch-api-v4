@@ -1,20 +1,42 @@
 # 1inch-api-v4
-* `Simple 1inch api v4 wrapper for node.js`
-* `Node.js >= v14.10.0`
-***
-# Installation:
-```console
-//npm
-npm i @normalizex/1inch-api-v4
+![](https://miro.medium.com/max/1400/1*nE0SDZw6v0QyBOoKyXcHtw.gif)
 
-//yarn
+
+* `Simple 1inch api v4 wrapper for node.js`
+* `Node.js >= v11.0.0`
+* `TypeScript >= 4.6.3`
+***
+# Introduction
+- Decentralised Exchange (DEX) 1inch has unveiled its ‘V4 router’ in a bid to make swaps and trades cheaper than competing platforms like Uniswap and SushiSwap on Ethereum.
+
+-  Version 4 of the 1inch router brings “several major improvements” to the DEX including cheaper swaps via lower gas costs, improved RFQ swaps and the introduction of ‘DAI-standard permits’.
+
+- According to 1inch, this will make swaps with the 1inch Router v4 “on average 5.4% cheaper than the same swaps made directly on DEXes, such as Uniswap” – a much-needed improvement to the rising cost of gas fees on Ethereum.
+***
+# Features
+* Full API coverage.
+* Typescript support.
+* Fully covered with annotations and comments.
+***
+# Installing
+Using npm:
+```console
+npm i @normalizex/1inch-api-v4
+```
+Using yarn:
+```console
 yarn add @normalizex/1inch-api-v4
 ```
 ***
-# Documentation:
+# Documentation
 * You can find full documentation in the folder [docs/README.md](./docs/README.md) 
 ***
-# Usage Exanple:
+# Usage:
+```js
+import OneInchApi, { ChainIds } from '@normalizex/1inch-api-v4';
+const Inch = new OneInchApi(ChainIds.ethereum);
+```
+# Example
 ```js
 import OneInchApi, { ChainIds } from "@normalizex/1inch-api-v4";
 
