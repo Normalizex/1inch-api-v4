@@ -1,6 +1,6 @@
 {
   "name": "@normalizex/1inch-api-v4",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "library targeting v4 of the 1inch DeFi aggregator API.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -17,7 +17,7 @@
   "private": false,
   "scripts": {
     "build": "tsc",
-    "docs": "npm run build && jsdoc ./dist/index.js --destination ./docs/module"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "web3",
