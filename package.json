@@ -1,6 +1,6 @@
 {
   "name": "@normalizex/1inch-api-v4",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "library targeting v4 of the 1inch DeFi aggregator API.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/Normalizex/1inch-api-v4"
   },
+  "homepage": "https://github.com/Normalizex/1inch-api-v4#readme",
   "author": "Normalizex",
   "license": "MIT",
   "private": false,
@@ -30,7 +31,6 @@
     "https",
     "async"
   ],
-  "homepage": "https://github.com/Normalizex/1inch-api-v4#readme",
   "dependencies": {
     "axios": "^0.27.0"
   },

@@ -33,14 +33,14 @@ yarn add @normalizex/1inch-api-v4
 ***
 # Usage:
 ```js
-import OneInchApi, { ChainIds } from '@normalizex/1inch-api-v4';
-const Inch = new OneInchApi(ChainIds.ethereum);
+import OneInchApi, { InchV4Chains } from '@normalizex/1inch-api-v4';
+const Inch = new OneInchApi(InchV4Chains.Ethereum);
 ```
 # Example
 ```js
-import OneInchApi, { ChainIds } from "@normalizex/1inch-api-v4";
+import OneInchApi, { InchV4Chains } from "@normalizex/1inch-api-v4";
 
-const Inch = new OneInchApi(ChainIds.ethereum);
+const Inch = new OneInchApi(InchV4Chains.Ethereum);
 
 const BUSD = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
 const WETH = '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee';
@@ -48,7 +48,7 @@ const WalletAddress = '0x35552CF3Ce8Cc8a0f7fdC8Aa88a89b92e9Ab5FdB';
 
 // EXAMPLES
 inch.chain();// return 1
-inch.swithChain(ChainIds.binanceSmartChain);
+inch.swithChain(InchV4Chains.BinanceSmartChain);
 inch.chain();// return 56
 
 Inch.allowance(BUSD, WalletAddress).then(data => {

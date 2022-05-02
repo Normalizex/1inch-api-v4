@@ -7,15 +7,15 @@ import { QuoteParams, QuoteResponse, SwapParams, SwapResponse } from './types/In
  * @readonly
  * @enum {number}
 */
-export const ChainIds = {
-	ethereum: 1,
-	binanceSmartChain: 56,
-	polygon: 137,
-	optimism: 10,
-	arbitrum: 42161,
-	gnosis: 100,
-	avalanche: 43114,
-	fantom: 250
+export const InchV4Chains = {
+	Ethereum: 1,
+	BinanceSmartChain: 56,
+	Polygon: 137,
+	Optimism: 10,
+	Arbitrum: 42161,
+	Gnosis: 100,
+	Avalanche: 43114,
+	Fantom: 250
 }
 
 /**
