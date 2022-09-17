@@ -27,15 +27,33 @@ Using yarn:
 ```console
 yarn add @normalizex/1inch-api-v4
 ```
+Using jsDelivr CDN:
+```html
+<script src="https://cdn.jsdelivr.net/npm/@normalizex/1inch-api-v4/dist/index.browser.min.js"></script>
+```
+Using unpkg CDN:
+```html
+<script src="https://unpkg.com/@normalizex/1inch-api-v4/dist/index.browser.min.js"></script>
+```
 ***
 # Documentation
 * You can find full documentation in the folder [docs/README.md](./docs/README.md) 
 ***
 # Usage:
+NodeJS:
 ```js
 import OneInchApi, { InchV4Chains } from '@normalizex/1inch-api-v4';
 const Inch = new OneInchApi(InchV4Chains.Ethereum);
 ```
+Browser:
+```html
+<script type="text/javascript">
+const Inch = new OneInchApi(InchV4Chains.Ethereum);
+
+console.log(InchV4Chains)//Object
+</script>
+```
+
 # Example
 ```js
 import OneInchApi, { InchV4Chains } from "@normalizex/1inch-api-v4";

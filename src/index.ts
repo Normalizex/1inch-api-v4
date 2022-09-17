@@ -23,7 +23,7 @@ export const InchV4Chains = {
  * @constructor
  * @public
  */
-class OneInchApi {
+export class OneInchApi {
 	private _baseUrl: string;
 	private _chainId: number;
 
