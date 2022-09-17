@@ -40,9 +40,14 @@ Using unpkg CDN:
 * You can find full documentation in the folder [docs/README.md](./docs/README.md) 
 ***
 # Usage:
-NodeJS:
+NodeJS (ES6):
 ```js
 import OneInchApi, { InchV4Chains } from '@normalizex/1inch-api-v4';
+const Inch = new OneInchApi(InchV4Chains.Ethereum);
+```
+NodeJS (commonjs)
+```js
+const { InchV4Chains, OneInchApi } = require('@normalizex/1inch-api-v4');
 const Inch = new OneInchApi(InchV4Chains.Ethereum);
 ```
 Browser:
