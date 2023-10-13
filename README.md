@@ -3,7 +3,7 @@
 
 ***
 # Deprecated
-Latest updated version of this package: [link](https://github.com/Normalizex/1inch-api-swap)
+### Latest updated version of this package: [link](https://github.com/Normalizex/1inch-api-swap)
 ***
 # Introduction
 - Decentralised Exchange (DEX) 1inch has unveiled its ‘V4 router’ in a bid to make swaps and trades cheaper than competing platforms like Uniswap and SushiSwap on Ethereum.
