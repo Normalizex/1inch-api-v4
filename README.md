@@ -1,6 +1,8 @@
 # 1inch-api-v4
 ![](./media/v4.gif)
 
+# Deprecated
+Latest updated version of this package: [link](https://github.com/Normalizex/1inch-api-swap)
 
 * `Simple 1inch api v4 wrapper for node.js`
 * `Node.js >= v11.0.0`
